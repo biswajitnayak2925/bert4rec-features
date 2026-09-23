@@ -1,0 +1,7 @@
+pandas
+numpy
+scikit-learn
+torch
+openpyxl
+# optional but recommended for higher-quality plot embeddings:
+# sentence-transformers
