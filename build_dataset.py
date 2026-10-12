@@ -1,29 +1,4 @@
-#!/usr/bin/env python3
-"""
-Build the five CSV files read by the BERT4Rec code (config.py) from the raw sources.
 
-Inputs
-  --ratings  MovieLens-25M ratings.csv          (userId, movieId, rating, timestamp)
-  --links2   output of fetch_credits.py         (movieId, imdbId, tmdbId, director, lead)
-  --tmdb     Kaggle "TMDB Movies Dataset 2023"  (id, title, runtime, overview, genres, ...)
-
-Outputs (written to --out)
-  Final_Ratings.csv     userId, movieId, rating, timestamp
-  model_genre.csv       movieId, title, genres
-  model_id.csv          movieId, title
-  model_metadata.csv    movieId, title, director, lead, runtime
-  model_plot.csv        movieId, title, overview
-
-Rules (as used for the paper)
-  1. Join the links2 table (which carries director and lead) with the Kaggle TMDB table on the TMDB id.
-  2. Drop every movie with a null in any of: title, genres, overview, runtime, director, lead.
-  3. Keep only movies present in both the ratings and the cleaned movie table.
-  4. Drop ratings of removed movies; users whose ratings all disappear are dropped implicitly.
-
-Usage
-  python build_dataset.py --ratings ml-25m/ratings.csv --links2 link2.csv \
-      --tmdb TMDB_movie_dataset_v11.csv --out data
-"""
 import argparse
 import os
 
