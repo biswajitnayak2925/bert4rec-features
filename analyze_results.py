@@ -1,20 +1,4 @@
-#!/usr/bin/env python3
-"""
-Recompute the statistics reported in the paper from results_by_seed.csv.
 
-For every sparsity (retention) level it prints
-  - mean and sample SD (n-1) of full-catalogue Recall@10 and NDCG@10 per variant
-  - relative change versus M1_id
-  - per-seed winner
-  - paired t-tests versus M1_id (nominal and Holm-corrected) and the number of seeds in which each variant wins
-  - Friedman test over the variants (needs >= 3 seeds)
-
-Usage
-  python analyze_results.py outputs_publication/results_by_seed.csv
-  python analyze_results.py run_a/results_by_seed.csv run_b/results_by_seed.csv --out analysis
-
-Several files are concatenated; a (variant, sparsity, seed) combination appearing twice keeps the last row.
-"""
 import argparse
 import os
 
