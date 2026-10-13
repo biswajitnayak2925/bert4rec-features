@@ -123,7 +123,7 @@ python run_all.py
 
 Seed 42 runs from pass 1 are skipped, so pass 2 only trains seeds 62 and 82 at the three lower retention levels.
 
-Compute: individual runs took about 0.9 to 2.3 hours at 10 to 50% retention on a single GPU, and 100% runs are longer, so the full set (50 runs) is on the order of 80 GPU-hours. To check the setup first, use `SPARSITY_LEVELS = [0.10]`, `SEEDS = [42]` and a small `NUM_EPOCHS`.
+Compute: individual runs took about 1 to 2.3 hours at 10 to 50% retention on a single GPU, and 100% runs are longer, so the full set (50 runs) is on the order of 80 GPU-hours. To check the setup first, use `SPARSITY_LEVELS = [0.10]`, `SEEDS = [42]` and a small `NUM_EPOCHS`.
 
 Important settings (already the paper's values in `config.py`): hidden size 128, 2 layers, 4 heads, feed-forward 256, dropout 0.2, mask probability 0.2, batch size 128, Adam with learning rate 1e-3, up to 200 epochs, validation every 4 epochs, patience 20 checks, 100 sampled negatives for validation.
 
@@ -187,3 +187,5 @@ Full-catalogue Recall@10 (mean ± SD over seeds 42, 62, 82; 100%: seed 42 only).
 - MovieLens-25M: F. M. Harper and J. A. Konstan, *The MovieLens Datasets: History and Context*, ACM TiiS 5(4), 2015. Follow the GroupLens usage terms.
 - TMDB Movies Dataset 2023 by asaniczka (Kaggle).
 - This product uses the TMDB API but is not endorsed or certified by TMDB.
+- Do not commit raw data, retrieved TMDB content or API keys to this repository.
+- Code licence: MIT (see `LICENSE`).
