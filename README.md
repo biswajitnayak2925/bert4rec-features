@@ -187,5 +187,3 @@ Full-catalogue Recall@10 (mean ± SD over seeds 42, 62, 82; 100%: seed 42 only).
 - MovieLens-25M: F. M. Harper and J. A. Konstan, *The MovieLens Datasets: History and Context*, ACM TiiS 5(4), 2015. Follow the GroupLens usage terms.
 - TMDB Movies Dataset 2023 by asaniczka (Kaggle).
 - This product uses the TMDB API but is not endorsed or certified by TMDB.
-- Do not commit raw data, retrieved TMDB content or API keys to this repository.
-- Code licence: MIT (see `LICENSE`).
